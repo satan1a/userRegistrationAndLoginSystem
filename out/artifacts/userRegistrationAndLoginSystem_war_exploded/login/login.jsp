@@ -4,8 +4,15 @@
   Date: 2019-03-25
   Time: 08:59
   To change this template use File | Settings | File Templates.
+  Theme: Use JavaBean to realise a simply sign&regist website
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -26,20 +33,23 @@
         <li class="tab col s3"><a class="white-text active" href="#login">login</a></li>
         <li class="tab col s3"><a class="white-text" href="#register">register</a></li>
     </ul>
+    <!--以下为登入-->
+    <!--以下post传值到checkSign.jsp再使用JavaBean传值-->
+    <!--TODO-->
     <div id="login" class="col s12">
-        <form action="checkSign.jsp"  class="col s12">
+        <form action="checkSign.jsp" method="post" class="col s12">
             <div class="form-container">
-                <h3 class="teal-text">Hello, 闈撲粩</h3>
+                <h3 class="teal-text">Hello, 靓仔</h3>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input name="email" type="email" class="validate">
+                        <label name="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
+                        <input name="password" type="password" class="validate">
+                        <label name="password">Password</label>
                     </div>
                 </div>
                 <br>
@@ -53,41 +63,43 @@
         </form>
     </div>
     <div id="register" class="col s12">
-        <form class="col s12">
+        <!--以下为注册-->
+        <%--TODO--%>
+        <form action="checkRegister.jsp" method="post" class="col s12">
             <div class="form-container">
                 <h3 class="teal-text">Welcome</h3>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">First Name</label>
+                        <input name="first_name" type="text" class="validate">
+                        <label name="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
+                        <input name="last_name" type="text" class="validate">
+                        <label name="last_name">Last Name</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                        <input name="email" type="email" class="validate">
+                        <label name="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email-confirm" type="email" class="validate">
-                        <label for="email-confirm">Email Confirmation</label>
+                        <input name="email_confirm" type="email" class="validate">
+                        <label name="email_confirm">Email Confirmation</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
+                        <input name="password" type="password" class="validate">
+                        <label name="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password-confirm" type="password" class="validate">
-                        <label for="password-confirm">Password Confirmation</label>
+                        <input name="password_confirm" type="password" class="validate">
+                        <label name="password_confirm">Password Confirmation</label>
                     </div>
                 </div>
                 <center>
