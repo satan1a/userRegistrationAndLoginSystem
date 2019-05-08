@@ -18,12 +18,10 @@
     <title>Success Login</title>
 </head>
 <body>
-登录成功，欢迎
-<font color="red">
+Logged in successfully，welcome!<br/>
     <jsp:getProperty property="email" name="sign"/>
 </font>
-您的密码为
-<font color="blue">
+Your password is:
     <jsp:getProperty property="password" name="sign"/>
 </font>
 </body>

@@ -26,19 +26,36 @@
     String email_confirm = request.getParameter("email_confirm");
     String password = request.getParameter("password");
     String password_confirm = request.getParameter("password_confirm");
+//   检查表单字段值是否为空
     if (first_name != "" && last_name != "" && email != "" && email_confirm != "" && password != "" && password_confirm != ""){
+//        检验email、password是否和检验相同
         if (email.equals(email_confirm) && password.equals(password_confirm)) { %>
             <jsp:setProperty name="register" property="email"></jsp:setProperty>
             <jsp:setProperty name="register" property="password"></jsp:setProperty>
             <jsp:setProperty name="register" property="first_name"></jsp:setProperty>
             <jsp:setProperty name="register" property="last_name"></jsp:setProperty>
+                <%--检验通过，重定向到successRegister.jsp文件，JavaBean传值--%>
             <%  response.sendRedirect("successRegister.jsp");
             }else {
-            out.print("Check Your email and password again!");
+            out.print("Check Your email and password again!"); %>
+            <br><a href="login.jsp">Return</a>
+           <% }
+    }else { %>
+        <script>
+            function firm() {
+                //利用对话框返回的值 （true 或者 false）
+                if (confirm("Please Check Your Blank again!")) {
+                    window.location.href="login.jsp";
+                }
+                else {
+                    window.location.href="login.jsp";
+                }
+
             }
-    }else {
-        out.print("Wrong!");
-    }
+
+            firm();
+        </script>
+<%    }
 %>
 </body>
 </html>

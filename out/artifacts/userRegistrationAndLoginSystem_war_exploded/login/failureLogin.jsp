@@ -17,7 +17,7 @@
     <title>Failure Login</title>
 </head>
 <body>
-WTF!
+Wrong!
 <a href="login.jsp">Return</a>
 </body>
 </html>

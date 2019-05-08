@@ -16,7 +16,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login / register material design form</title>
+    <title>Login & Register System</title>
 
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
@@ -37,6 +37,7 @@
     <!--以下post传值到checkSign.jsp再使用JavaBean传值-->
     <!--TODO-->
     <div id="login" class="col s12">
+        <!--action方法，点击按钮，post方法将数据抛入JavaBean-->
         <form action="checkSign.jsp" method="post" class="col s12">
             <div class="form-container">
                 <h3 class="teal-text">Hello, 靓仔</h3>
@@ -57,7 +58,7 @@
                     <button class="btn waves-effect waves-light teal" type="submit" name="action">Connect</button>
                     <br>
                     <br>
-                    <a href="">Forgotten password?</a>
+                    <a href="resetPassword.jsp">Forgotten password?</a>
                 </center>
             </div>
         </form>
@@ -70,7 +71,7 @@
                 <h3 class="teal-text">Welcome</h3>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input name="first_name" type="text" class="validate">
+                        <input name="first_name" type="text" class="validate" size="20">
                         <label name="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
@@ -92,13 +93,13 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="password" type="password" class="validate">
+                        <input name="password" type="password" class="validate" size="20">
                         <label name="password">Password</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="password_confirm" type="password" class="validate">
+                        <input name="password_confirm" type="password" class="validate" size="20">
                         <label name="password_confirm">Password Confirmation</label>
                     </div>
                 </div>

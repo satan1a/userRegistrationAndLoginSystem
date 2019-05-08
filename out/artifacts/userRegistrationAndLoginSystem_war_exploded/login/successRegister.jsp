@@ -20,5 +20,7 @@
 Your name is: <jsp:getProperty name="register" property="first_name"/> <jsp:getProperty name="register" property="last_name"/> <br/>
 Your email is: <jsp:getProperty name="register" property="email"/> <br>
 Your password is: <jsp:getProperty name="register" property="password"/>
+
+
 </body>
 </html>
